@@ -21,10 +21,10 @@ class Solution:
         else:
             n1 = n // 2
             n2 = n - n1
-            print(n1, n2)
             pn1 = self.myPowMemo(x, n1, memo)
             memo[n1] = pn1 
+            if n1 == n2:
+                return pn1 * pn1
             pn2 = self.myPowMemo(x, n2, memo)
             memo[n2] = pn2
             return pn1 * pn2
-
